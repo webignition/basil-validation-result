@@ -7,5 +7,9 @@ namespace webignition\BasilValidationResult;
 interface ResultInterface
 {
     public function getIsValid(): bool;
+
+    /**
+     * @return mixed
+     */
     public function getSubject();
 }
