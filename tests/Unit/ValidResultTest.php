@@ -9,7 +9,7 @@ use webignition\BasilValidationResult\ValidResult;
 
 class ValidResultTest extends TestCase
 {
-    public function testCreate()
+    public function testCreate(): void
     {
         $subject = new \stdClass();
 

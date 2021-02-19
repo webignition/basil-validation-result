@@ -6,9 +6,16 @@ namespace webignition\BasilValidationResult;
 
 abstract class AbstractResult implements ResultInterface
 {
-    private $isValid;
+    private bool $isValid;
+
+    /**
+     * @var mixed
+     */
     private $subject;
 
+    /**
+     * @param mixed $subject
+     */
     public function __construct(bool $isValid, $subject)
     {
         $this->isValid = $isValid;

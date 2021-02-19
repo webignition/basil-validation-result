@@ -9,7 +9,7 @@ use webignition\BasilValidationResult\InvalidResult;
 
 class InvalidResultTest extends TestCase
 {
-    public function testCreate()
+    public function testCreate(): void
     {
         $subject = new \stdClass();
         $type = 'type';
@@ -23,7 +23,7 @@ class InvalidResultTest extends TestCase
         $this->assertSame($reason, $result->getReason());
     }
 
-    public function testCreateUnhandledModelResult()
+    public function testCreateUnhandledModelResult(): void
     {
         $subject = new \stdClass();
 
@@ -35,7 +35,7 @@ class InvalidResultTest extends TestCase
         $this->assertSame('', $result->getReason());
     }
 
-    public function testGetPrevious()
+    public function testGetPrevious(): void
     {
         $previous = new InvalidResult(new \stdClass(), 'previous type', 'previous reason');
         $result = new InvalidResult(new \stdClass(), 'type', 'reason', $previous);
@@ -43,7 +43,7 @@ class InvalidResultTest extends TestCase
         $this->assertSame($previous, $result->getPrevious());
     }
 
-    public function testGetContext()
+    public function testGetContext(): void
     {
         $context = [
             'foo' => 'bar',
