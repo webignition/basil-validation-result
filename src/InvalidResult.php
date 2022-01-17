@@ -8,28 +8,21 @@ class InvalidResult extends AbstractResult implements InvalidResultInterface
 {
     public const TYPE_UNHANDLED = 'unhandled';
 
-    private string $type;
-    private string $reason;
-    private ?InvalidResultInterface $previous;
-
     /**
      * @var array<mixed>
      */
     private array $context = [];
 
-    public function __construct($subject, string $type, string $reason, ?InvalidResultInterface $previous = null)
-    {
+    public function __construct(
+        mixed $subject,
+        private string $type,
+        private string $reason,
+        private ?InvalidResultInterface $previous = null
+    ) {
         parent::__construct(false, $subject);
-
-        $this->type = $type;
-        $this->reason = $reason;
-        $this->previous = $previous;
     }
 
-    /**
-     * @param mixed $subject
-     */
-    public static function createUnhandledSubjectResult($subject): InvalidResultInterface
+    public static function createUnhandledSubjectResult(mixed $subject): InvalidResultInterface
     {
         return new InvalidResult($subject, self::TYPE_UNHANDLED, '');
     }
