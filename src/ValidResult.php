@@ -6,7 +6,7 @@ namespace webignition\BasilValidationResult;
 
 class ValidResult extends AbstractResult
 {
-    public function __construct($subject)
+    public function __construct(mixed $subject)
     {
         parent::__construct(true, $subject);
     }

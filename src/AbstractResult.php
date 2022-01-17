@@ -6,20 +6,10 @@ namespace webignition\BasilValidationResult;
 
 abstract class AbstractResult implements ResultInterface
 {
-    private bool $isValid;
-
-    /**
-     * @var mixed
-     */
-    private $subject;
-
-    /**
-     * @param mixed $subject
-     */
-    public function __construct(bool $isValid, $subject)
-    {
-        $this->isValid = $isValid;
-        $this->subject = $subject;
+    public function __construct(
+        private bool $isValid,
+        private mixed $subject
+    ) {
     }
 
     public function getIsValid(): bool
@@ -27,7 +17,7 @@ abstract class AbstractResult implements ResultInterface
         return $this->isValid;
     }
 
-    public function getSubject()
+    public function getSubject(): mixed
     {
         return $this->subject;
     }

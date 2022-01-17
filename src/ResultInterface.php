@@ -8,8 +8,5 @@ interface ResultInterface
 {
     public function getIsValid(): bool;
 
-    /**
-     * @return mixed
-     */
-    public function getSubject();
+    public function getSubject(): mixed;
 }
